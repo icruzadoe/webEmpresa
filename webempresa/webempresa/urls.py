@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+#cargamos el fichero settings de la carpeta webpersonal dentro de la memoria, ya que ahi sacaremos MEDIA_URL y MEDIA_ROOT
+from django.conf import settings
 
 urlpatterns = [
 	#path de la app core
@@ -22,3 +24,8 @@ urlpatterns = [
 	#path de admin
     path('admin/', admin.site.urls),
 ]
+
+
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
