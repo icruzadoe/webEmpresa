@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
     'core',
     'services.apps.ServicesConfig', #esto para que utilice la configuracione extendida
 ]
