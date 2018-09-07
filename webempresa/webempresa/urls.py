@@ -19,6 +19,8 @@ from django.urls import path,include
 from django.conf import settings
 
 urlpatterns = [
+    #Path de la app blog
+    path('blog/', include('blog.urls')),
 	#path de la app core
 	path('', include('core.urls')),
     #Path de la app services
